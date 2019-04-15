@@ -1,41 +1,27 @@
-php-simple-html-dom-parser
-==========================
+# Simple HTML DOM Parser
 
-Version 1.5.2
+A HTML DOM parser written in PHP7 let you manipulate HTML in a very easy way! Supports invalid HTML. Find tags on an HTML page with selectors just like jQuery. Extract contents from HTML in a single line.
 
-Adaptation for Composer and PSR-0 of:
+## Usage
 
-A HTML DOM parser written in PHP5+ let you manipulate HTML in a very easy way!
-Require PHP 5+.
-Supports invalid HTML.
-Find tags on an HTML page with selectors just like jQuery.
-Extract contents from HTML in a single line.
-
-http://simplehtmldom.sourceforge.net/
-
-
-Install
--------
-
- composer.phar
-```json
-"require": {
-    "sunra/php-simple-html-dom-parser": "1.5.2"
-    }
-```
-
-Usage
------
+From a string:
 
 ```php
-use Sunra\PhpSimple\HtmlDomParser;
+use Torann\DomParser\HtmlDom;
 
-...
-$dom = HtmlDomParser::str_get_html( $str );
-or 
-$dom = HtmlDomParser::file_get_html( $file_name );
+$dom = HtmlDom::fromString($str);
 
-$elems = $dom->find($elem_name);
-...
+$elements = $dom->find($el_name);
+
+```
+
+From a file:
+
+```php
+use Torann\DomParser\HtmlDom;
+
+$dom = HtmlDom::fromFile($file_name);
+
+$elements = $dom->find($el_name);
 
 ```
