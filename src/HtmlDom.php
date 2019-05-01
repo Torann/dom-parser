@@ -544,7 +544,7 @@ class HtmlDom
             return true;
         }
 
-        if (!preg_match("/^[\w-:]+$/", $tag)) {
+        if (!preg_match("/^[\w\-:]+$/", $tag)) {
             $node->_[self::HDOM_INFO_TEXT] = '<' . $tag . $this->copyUntil('<>');
             if ($this->char === '<') {
                 $this->linkNodes($node, false);
